@@ -1,0 +1,29 @@
+# ── Core web framework ────────────────────────────────────
+flask>=3.0
+flask-socketio>=5.3
+flask-sqlalchemy>=3.1
+flask-migrate>=4.0           # ← NEW: version-controlled DB migrations
+flask-jwt-extended>=4.6
+flask-bcrypt>=1.0
+flask-cors>=4.0
+flask-limiter>=4.0
+simple-websocket>=1.1        # SocketIO transport (no eventlet needed for dev)
+
+# ── Database drivers ──────────────────────────────────────
+# SQLite is bundled with Python; PostgreSQL for production:
+psycopg2-binary>=2.9; sys_platform != "win32"
+
+# ── Security & validation ─────────────────────────────────
+bleach>=6.0
+
+# ── Utilities ─────────────────────────────────────────────
+gunicorn>=21.0               # WSGI server for production
+
+# ── Optional: faster async for SocketIO ──────────────────
+# eventlet>=0.35             # Uncomment for production WebSocket scaling
+#                            # Then change async_mode="eventlet" in app.py
+
+# ── Optional: feature modules ────────────────────────────
+qrcode[pil]>=7.4             # UPI QR generation
+reportlab>=4.0               # PDF reports
+Pillow>=10.0                 # Image processing
